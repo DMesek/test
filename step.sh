@@ -8,4 +8,4 @@ if [[ ! -z ${config_file_content} ]]; then
 fi
 
 set -- ${commandline_options}
-vpnc "$@"
+sudo vpnc "$@"
