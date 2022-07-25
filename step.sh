@@ -2,7 +2,9 @@
 set -e
 
 if [[ ! -z ${config_file_content} ]]; then
-  sudo echo "${config_file_content}" > /etc/vpnc/default.conf
+  echo "${config_file_content}" > default.conf
+  sudo rm /etc/vpnc/default.conf
+  sudo mv default.conf /etc/vpnc
 fi
 
 set -- ${commandline_options}
